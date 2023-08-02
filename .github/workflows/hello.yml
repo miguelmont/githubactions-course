@@ -8,7 +8,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Print data on ubuntu
-      run: echo date
+      run: date
   job2:
     runs-on: windows-latest
     steps:
@@ -20,12 +20,12 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Print date on macos
-        run: echo date
+        run: date
   job4:
     needs: [job1, job2, job3]
-    runs-on: ubuntu:16.04
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
       - name: dependence job
-        run: echo date
+        run: date
 
